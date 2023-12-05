@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Automatyczne Logowanie Qustodio",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.qustodio.com/*",
+    "https://family.qustodio.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.qustodio.com/*",
+        "*://auth.qustodio.com/*"
+    ],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  }
+}
